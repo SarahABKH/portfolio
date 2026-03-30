@@ -33,7 +33,7 @@ export function Contact() {
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
-          className="font-serif text-4xl md:text-6xl font-light text-primary mb-6"
+          className="font-serif text-4xl md:text-6xl font-light text-[rgb(59_18_40)] dark:text-primary mb-6"
         >
           Let's build something<br />worth building.
         </motion.h2>
@@ -41,7 +41,7 @@ export function Contact() {
           initial={{ opacity: 0 }}
           animate={inView ? { opacity: 1 } : {}}
           transition={{ delay: 0.2 }}
-          className="font-sans text-desc mb-16 text-lg max-w-xl leading-relaxed"
+          className="font-sans mb-16 text-lg max-w-xl leading-relaxed text-[rgb(55_38_48)] dark:text-[rgb(220_198_210)]"
         >
           If you're working on something interesting, or just want to talk craft — I'm around.
         </motion.p>
@@ -58,10 +58,10 @@ export function Contact() {
             className="flex items-center gap-4 group w-full text-left rounded-2xl border border-border bg-surface p-4 md:p-6 shadow-[0_1px_0_rgba(0,0,0,0.04)] ring-1 ring-primary/5 transition-all duration-500 hover:border-accent/40 dark:border-border dark:bg-elevated dark:shadow-none dark:ring-white/10"
           >
             <Mail size={16} className="text-accent flex-shrink-0" />
-            <span className="font-sans text-sm md:text-base font-medium text-primary dark:text-[#f7edf3]">
+            <span className="font-sans text-sm md:text-base font-medium text-[rgb(59_18_40)] dark:text-primary">
               {personal.email}
             </span>
-            <ArrowRight size={14} className="ml-auto text-muted group-hover:text-accent group-hover:translate-x-1 transition-all duration-300 dark:text-[#c9a8b8]" />
+            <ArrowRight size={14} className="ml-auto text-[rgb(154_125_140)] group-hover:text-accent dark:text-muted group-hover:translate-x-1 transition-all duration-300" />
             <AnimatePresence>
               {copied && (
                 <motion.span
@@ -89,10 +89,10 @@ export function Contact() {
               className="flex items-center gap-4 group rounded-2xl border border-border bg-surface p-4 md:p-6 shadow-[0_1px_0_rgba(0,0,0,0.04)] ring-1 ring-primary/5 transition-all duration-500 hover:border-accent/40 dark:border-border dark:bg-elevated dark:shadow-none dark:ring-white/10"
             >
               <Icon size={16} className="text-accent flex-shrink-0" />
-              <span className="font-sans text-sm md:text-base font-medium text-primary dark:text-[#f7edf3]">
+              <span className="font-sans text-sm md:text-base font-medium text-[rgb(59_18_40)] dark:text-primary">
                 {label}
               </span>
-              <ArrowRight size={14} className="ml-auto text-muted group-hover:text-accent group-hover:translate-x-1 transition-all duration-300 dark:text-[#c9a8b8]" />
+              <ArrowRight size={14} className="ml-auto text-[rgb(154_125_140)] group-hover:text-accent dark:text-muted group-hover:translate-x-1 transition-all duration-300" />
             </a>
           ))}
         </motion.div>

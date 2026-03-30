@@ -36,7 +36,7 @@ export function HowIThink() {
             initial={{ opacity: 0, y: 20 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8 }}
-            className="font-serif text-4xl md:text-5xl font-light text-primary"
+            className="font-serif text-4xl md:text-5xl font-light text-[rgb(59_18_40)] dark:text-primary"
           >
             A few things I keep<br />coming back to.
           </motion.h2>
@@ -69,7 +69,7 @@ export function HowIThink() {
             className="bg-elevated border border-border/50 rounded-sm p-6 group cursor-default relative overflow-hidden"
           >
             {/* Card number, top right */}
-            <p className="absolute top-4 right-4 font-serif text-xl text-muted/20 font-light">
+            <p className="absolute top-4 right-4 font-serif text-xl text-[rgb(154_125_140)]/20 dark:text-muted/20 font-light">
               {String(i + 1).padStart(2, '0')}
             </p>
 
@@ -79,7 +79,7 @@ export function HowIThink() {
             </p>
 
             {/* Main thought */}
-            <p className="font-serif text-lg md:text-xl font-light text-primary leading-relaxed">
+            <p className="font-serif text-lg md:text-xl font-light text-[rgb(59_18_40)] dark:text-primary leading-relaxed">
               {item.thought}
             </p>
 

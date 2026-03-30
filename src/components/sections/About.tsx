@@ -38,7 +38,7 @@ export function About() {
         initial={{ opacity: 0, y: 20 }}
         animate={inView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.8 }}
-        className="font-serif text-4xl md:text-5xl font-light text-primary mb-16"
+        className="font-serif text-4xl md:text-5xl font-light text-[rgb(59_18_40)] dark:text-primary mb-16"
       >
         A few things worth knowing.
       </motion.h2>
@@ -53,11 +53,11 @@ export function About() {
             variants={cardVariants}
             className="rounded-2xl border border-border bg-surface p-6 md:p-7 shadow-[0_1px_0_rgba(0,0,0,0.04)] ring-1 ring-primary/5 dark:border-border dark:bg-elevated dark:shadow-none dark:ring-white/10"
           >
-            <p className="font-sans text-xs font-semibold text-primary uppercase tracking-widest mb-3">
+            <p className="font-sans text-xs font-semibold text-[rgb(59_18_40)] dark:text-primary uppercase tracking-widest mb-3">
               {s.label}
             </p>
             <p
-              className="font-sans text-desc leading-relaxed text-sm md:text-base"
+              className="font-sans leading-relaxed text-sm md:text-base text-[rgb(55_38_48)] dark:text-[rgb(220_198_210)]"
               data-cursor="text"
             >
               {s.text}
@@ -83,8 +83,8 @@ export function About() {
             key={fact.label}
             className="rounded-xl border border-border bg-surface p-6 text-center shadow-[0_1px_0_rgba(0,0,0,0.03)] dark:bg-elevated dark:ring-1 dark:ring-white/5"
           >
-            <p className="font-serif text-3xl text-primary font-light">{fact.value}</p>
-            <p className="font-sans text-xs text-muted mt-2 uppercase tracking-wider dark:text-[#d4b8c4]">
+            <p className="font-serif text-3xl text-[rgb(59_18_40)] dark:text-primary font-light">{fact.value}</p>
+            <p className="font-sans text-xs text-[rgb(154_125_140)] dark:text-muted mt-2 uppercase tracking-wider">
               {fact.label}
             </p>
           </div>

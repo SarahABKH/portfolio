@@ -27,7 +27,7 @@ export function Blogs() {
         initial={{ opacity: 0, y: 20 }}
         animate={inView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.8 }}
-        className="font-serif text-4xl md:text-5xl font-light text-primary mb-4"
+        className="font-serif text-4xl md:text-5xl font-light text-[rgb(59_18_40)] dark:text-primary mb-4"
       >
         Words on craft &amp; systems.
       </motion.h2>
@@ -35,7 +35,7 @@ export function Blogs() {
         initial={{ opacity: 0 }}
         animate={inView ? { opacity: 1 } : {}}
         transition={{ delay: 0.15 }}
-        className="font-sans text-secondary text-sm md:text-base max-w-2xl mb-14 leading-relaxed"
+        className="font-sans text-[rgb(107_77_95)] dark:text-secondary text-sm md:text-base max-w-2xl mb-14 leading-relaxed"
       >
         Longer pieces live on Medium — here’s a highlight you can open in one click.
       </motion.p>
@@ -93,21 +93,21 @@ export function Blogs() {
               <article className="flex flex-col flex-1 min-w-0">
                 <p className="font-sans text-xs text-accent uppercase tracking-widest mb-2">
                   {post.publication}
-                  <span className="text-muted font-normal normal-case tracking-normal">
+                  <span className="text-[rgb(154_125_140)] dark:text-muted font-normal normal-case tracking-normal">
                     {' '}
                     · {post.date}
                   </span>
                 </p>
-                <h3 className="font-serif text-2xl md:text-3xl font-light text-primary leading-snug mb-3 group-hover:text-accent transition-colors duration-300">
+                <h3 className="font-serif text-2xl md:text-3xl font-light text-[rgb(59_18_40)] dark:text-primary leading-snug mb-3 group-hover:text-accent transition-colors duration-300">
                   {post.title}
                 </h3>
-                <p className="font-sans text-secondary text-sm md:text-base leading-relaxed mb-6">
+                <p className="font-sans text-[rgb(107_77_95)] dark:text-secondary text-sm md:text-base leading-relaxed mb-6">
                   {post.excerpt}
                 </p>
-                <p className="font-sans text-xs text-muted mb-6">{post.credit}</p>
+                <p className="font-sans text-xs text-[rgb(154_125_140)] dark:text-muted mb-6">{post.credit}</p>
                 <span className="mt-auto inline-flex items-center gap-2 font-sans text-sm font-medium text-accent">
                   Read on Medium
-                  <span className="text-muted font-normal">({post.readTime})</span>
+                  <span className="text-[rgb(154_125_140)] dark:text-muted font-normal">({post.readTime})</span>
                   <ArrowUpRight
                     className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
                     aria-hidden

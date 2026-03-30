@@ -25,16 +25,16 @@ function ProjectCard({
       <div className="flex items-start justify-between mb-4">
         <div>
           <div className="flex items-center gap-3 mb-1">
-            <h3 className="font-serif text-xl md:text-2xl text-primary font-light">
+            <h3 className="font-serif text-xl md:text-2xl text-[rgb(59_18_40)] dark:text-primary font-light">
               {project.name}
             </h3>
             {project.private && (
-              <span className="flex items-center gap-1 text-xs text-muted font-sans">
+              <span className="flex items-center gap-1 text-xs text-[rgb(154_125_140)] dark:text-muted font-sans">
                 <Lock size={10} /> private
               </span>
             )}
           </div>
-          <p className="font-sans text-sm text-muted">{project.year}</p>
+          <p className="font-sans text-sm text-[rgb(154_125_140)] dark:text-muted">{project.year}</p>
         </div>
         <div className="flex gap-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
           {project.github && (
@@ -44,7 +44,7 @@ function ProjectCard({
               rel="noopener noreferrer"
               onClick={(e) => e.stopPropagation()}
               data-cursor="pointer"
-              className="text-secondary hover:text-primary transition-colors"
+              className="text-[rgb(107_77_95)] hover:text-[rgb(59_18_40)] dark:text-secondary dark:hover:text-primary transition-colors"
             >
               <Github size={16} />
             </a>
@@ -52,7 +52,7 @@ function ProjectCard({
         </div>
       </div>
 
-      <p className="font-sans text-secondary text-sm md:text-base mb-4 leading-relaxed">
+      <p className="font-sans text-[rgb(107_77_95)] dark:text-secondary text-sm md:text-base mb-4 leading-relaxed">
         {project.tagline}
       </p>
 
@@ -75,7 +75,7 @@ function ProjectCard({
                   <p className="font-sans text-xs text-accent uppercase tracking-widest mb-2">
                     {item.label}
                   </p>
-                  <p className="font-sans text-secondary text-sm leading-relaxed">
+                  <p className="font-sans text-[rgb(107_77_95)] dark:text-secondary text-sm leading-relaxed">
                     {item.text}
                   </p>
                 </div>
@@ -89,14 +89,14 @@ function ProjectCard({
         {project.tech.map((t) => (
           <span
             key={t}
-            className="font-sans text-xs text-muted border border-border/50 px-2 py-1 rounded-sm"
+            className="font-sans text-xs text-[rgb(154_125_140)] dark:text-muted border border-border/50 px-2 py-1 rounded-sm"
           >
             {t}
           </span>
         ))}
       </div>
 
-      <p className="font-sans text-xs text-muted/50 mt-4 group-hover:text-muted transition-colors duration-300">
+      <p className="font-sans text-xs text-[rgb(154_125_140)]/50 mt-4 group-hover:text-[rgb(154_125_140)] dark:text-muted/50 dark:group-hover:text-muted transition-colors duration-300">
         {expanded ? 'Click to collapse' : 'Click to explore'}
       </p>
     </motion.div>
@@ -126,7 +126,7 @@ export function Projects() {
         initial={{ opacity: 0, y: 20 }}
         animate={inView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.8 }}
-        className="font-serif text-4xl md:text-5xl font-light text-primary mb-4"
+        className="font-serif text-4xl md:text-5xl font-light text-[rgb(59_18_40)] dark:text-primary mb-4"
       >
         Things I've built.
       </motion.h2>
@@ -134,7 +134,7 @@ export function Projects() {
         initial={{ opacity: 0 }}
         animate={inView ? { opacity: 1 } : {}}
         transition={{ delay: 0.2 }}
-        className="font-sans text-secondary text-sm mb-16"
+        className="font-sans text-[rgb(107_77_95)] dark:text-secondary text-sm mb-16"
       >
         Click any card to see the thinking behind it.
       </motion.p>

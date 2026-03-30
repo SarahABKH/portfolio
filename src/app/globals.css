@@ -4,17 +4,17 @@
 
 @layer base {
   :root {
-    --color-base: #fff8fb;
-    --color-surface: #ffeef6;
-    --color-elevated: #ffdceb;
-    --color-primary: #3b1228;
-    --color-secondary: #6b4d5f;
-    --color-muted: #9a7d8c;
-    --color-prose-soft: #a898a8;
-    --color-accent: #d9267d;
+    --color-base: 255 248 251;
+    --color-surface: 255 238 246;
+    --color-elevated: 255 220 235;
+    --color-primary: 59 18 40;
+    --color-secondary: 107 77 95;
+    --color-muted: 154 125 140;
+    --color-prose-soft: 168 152 168;
+    --color-accent: 217 38 125;
     --color-accent-soft: rgba(217, 38, 125, 0.12);
-    --color-accent-warm: #c45a8a;
-    --color-border: #f3c4dc;
+    --color-accent-warm: 196 90 138;
+    --color-border: 243 196 220;
     --color-glow: rgba(255, 105, 180, 0.35);
     --mesh-1: #ffd6e8;
     --mesh-2: #ffe0f3;
@@ -24,18 +24,18 @@
   }
 
   .dark {
-    --color-base: #140810;
-    --color-surface: #1f0f18;
-    --color-elevated: #2a1522;
-    --color-primary: #fdeef6;
-    /* Lighter on purple surfaces so body copy stays readable */
-    --color-secondary: #ead4df;
-    --color-muted: #b9a0ad;
-    --color-prose-soft: #e2ccd8;
-    --color-accent: #fb64b6;
+    --color-base: 20 8 16;
+    --color-surface: 31 15 24;
+    --color-elevated: 42 21 34;
+    --color-primary: 253 238 246;
+    /* Slightly deeper than before so body copy isn’t “white” on cards */
+    --color-secondary: 220 198 210;
+    --color-muted: 185 160 173;
+    --color-prose-soft: 226 204 216;
+    --color-accent: 251 100 182;
     --color-accent-soft: rgba(251, 100, 182, 0.15);
-    --color-accent-warm: #f9a8d4;
-    --color-border: #4a2a3d;
+    --color-accent-warm: 249 168 212;
+    --color-border: 74 42 61;
     --color-glow: rgba(251, 100, 182, 0.25);
     --mesh-1: #2d1024;
     --mesh-2: #1a0f1c;
@@ -53,8 +53,8 @@
   }
 
   body {
-    background-color: var(--color-base);
-    color: var(--color-primary);
+    background-color: rgb(var(--color-base));
+    color: rgb(var(--color-primary));
     font-family: var(--font-inter);
     -webkit-font-smoothing: antialiased;
     position: relative;
@@ -99,70 +99,8 @@
 }
 
 @layer utilities {
-  .font-serif {
-    font-family: var(--font-cormorant);
-  }
-
-  .font-sans {
-    font-family: var(--font-inter);
-  }
-
-  .bg-base {
-    background-color: var(--color-base);
-  }
-
-  .bg-surface {
-    background-color: var(--color-surface);
-  }
-
-  .bg-elevated {
-    background-color: var(--color-elevated);
-  }
-
-  .text-primary {
-    color: var(--color-primary);
-  }
-
-  .text-secondary {
-    color: var(--color-secondary);
-  }
-
-  .text-muted {
-    color: var(--color-muted);
-  }
-
-  .text-prose-soft {
-    color: var(--color-prose-soft);
-  }
-
-  /* Descriptions on tinted cards (About, Contact) — full-opacity primary in dark */
-  .text-desc {
-    color: var(--color-secondary);
-  }
-
-  .dark .text-desc {
-    color: #f2e3eb;
-  }
-
-  .text-accent {
-    color: var(--color-accent);
-  }
-
-  .text-accent-warm {
-    color: var(--color-accent-warm);
-  }
-
-  .border-border {
-    border-color: var(--color-border);
-  }
-
-  .accent {
-    color: var(--color-accent);
-  }
-
-  .bg-accent-soft {
-    background-color: var(--color-accent-soft);
-  }
+  /* Color/text/bg utilities come from tailwind.config theme (single source of truth).
+     Duplicate rules here were overriding Tailwind and could break light-mode contrast. */
 
   .ring-glow {
     box-shadow: 0 0 60px -12px var(--color-glow);

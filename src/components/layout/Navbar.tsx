@@ -1,8 +1,10 @@
 'use client';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 import { useState, useEffect, useRef } from 'react';
 import { ThemeToggle } from '@/components/ui/ThemeToggle';
 import { Menu, X } from 'lucide-react';
+import brandMark from '@/assets/icons8-girl-32.png';
 
 const navItems = [
   { label: 'About', href: '#about' },
@@ -56,7 +58,7 @@ export function Navbar() {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 px-6 md:px-16 lg:px-24 py-6 transition-all duration-500 ${
         isScrolled
-          ? 'bg-base/85 backdrop-blur-md border-b border-accent/10 shadow-sm shadow-accent/5'
+          ? 'bg-canvas/85 backdrop-blur-md border-b border-accent/10 shadow-sm shadow-accent/5'
           : 'bg-transparent'
       }`}
     >
@@ -69,9 +71,17 @@ export function Navbar() {
             handleNavClick('#hero');
           }}
           data-cursor="pointer"
-          className="font-serif text-sm font-light text-primary tracking-wider"
+          aria-label="Sarah Abdul Khader — home"
+          className="flex items-center gap-2 rounded-md ring-1 ring-border/40 transition-opacity hover:opacity-90"
         >
-          SAK
+          <Image
+            src={brandMark}
+            alt=""
+            width={32}
+            height={32}
+            className="h-8 w-8 object-contain"
+            priority
+          />
         </a>
 
         {/* Desktop Navigation */}

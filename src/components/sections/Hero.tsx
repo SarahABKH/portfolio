@@ -42,7 +42,7 @@ export function Hero() {
 
       {/* Vignette + subtle diagonal sheen */}
       <span
-        className="absolute inset-0 bg-gradient-to-b from-base/20 via-transparent to-base/90 dark:from-[#140810]/30 dark:via-transparent dark:to-[#140810]/95"
+        className="absolute inset-0 bg-gradient-to-b from-canvas/20 via-transparent to-canvas/90 dark:from-[#140810]/30 dark:via-transparent dark:to-[#140810]/95"
         aria-hidden
       />
       <span
@@ -53,7 +53,7 @@ export function Hero() {
       <motion.div style={{ y, opacity }} className="relative z-10 max-w-4xl w-full">
         {/* Gradient frame + glass panel — lifts content off the grid */}
         <div className="relative rounded-[1.75rem] p-px bg-gradient-to-br from-accent/50 via-accent/15 to-transparent shadow-[0_0_0_1px_rgba(0,0,0,0.04)] dark:shadow-[0_0_0_1px_rgba(255,255,255,0.06)] dark:from-accent/40 dark:via-accent/10">
-          <div className="rounded-[1.75rem] bg-base/75 dark:bg-[#0f080c]/80 backdrop-blur-xl px-8 py-10 md:px-12 md:py-12 ring-1 ring-accent/10 dark:ring-accent/15">
+          <div className="rounded-[1.75rem] bg-canvas/75 dark:bg-[#0f080c]/80 backdrop-blur-xl px-8 py-10 md:px-12 md:py-12 ring-1 ring-accent/10 dark:ring-accent/15">
             <span
               className="mb-8 block h-px w-12 bg-gradient-to-r from-accent to-transparent"
               aria-hidden

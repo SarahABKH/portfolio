@@ -26,7 +26,7 @@ export function Skills() {
         initial={{ opacity: 0, y: 20 }}
         animate={inView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.8 }}
-        className="font-serif text-4xl md:text-5xl font-light text-primary mb-16"
+        className="font-serif text-4xl md:text-5xl font-light text-[rgb(59_18_40)] dark:text-primary mb-16"
       >
         How I work.
       </motion.h2>
@@ -49,10 +49,10 @@ export function Skills() {
               className="w-full border border-border/50 bg-surface rounded-sm p-4 md:p-6 text-left hover:border-accent/30 transition-colors duration-300 flex items-center justify-between"
             >
               <div>
-                <h3 className="font-serif text-xl md:text-2xl text-primary font-light mb-1">
+                <h3 className="font-serif text-xl md:text-2xl text-[rgb(59_18_40)] dark:text-primary font-light mb-1">
                   {category.category}
                 </h3>
-                <p className="font-sans text-sm text-muted">
+                <p className="font-sans text-sm text-[rgb(154_125_140)] dark:text-muted">
                   {category.description}
                 </p>
               </div>
@@ -85,7 +85,7 @@ export function Skills() {
                         transition={{ delay: idx * 0.05 }}
                         className="px-3 py-2 bg-elevated rounded-sm border border-border/50"
                       >
-                        <p className="font-sans text-sm text-secondary">
+                        <p className="font-sans text-sm text-[rgb(107_77_95)] dark:text-secondary">
                           {item}
                         </p>
                       </motion.div>
