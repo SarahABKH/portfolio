@@ -92,6 +92,10 @@
   body.time-night {
     filter: brightness(0.97);
   }
+
+  canvas.sketch-canvas {
+    cursor: crosshair !important;
+  }
 }
 
 @layer utilities {

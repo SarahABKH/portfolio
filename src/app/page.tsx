@@ -11,6 +11,7 @@ import { Contact } from '@/components/sections/Contact';
 import { CustomCursor } from '@/components/ui/CustomCursor';
 import { ScrollProgress } from '@/components/ui/ScrollProgress';
 import { FocusMode } from '@/components/ui/FocusMode';
+import { SketchLayer } from '@/components/ui/SketchLayer';
 import { DearDiEasterEgg } from '@/components/providers/DearDiEasterEgg';
 
 export default function Home() {
@@ -32,6 +33,7 @@ export default function Home() {
       </main>
       <Footer />
       <FocusMode />
+      <SketchLayer />
     </>
   );
 }
