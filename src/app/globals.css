@@ -1,0 +1,115 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-base: #f5f3ef;
+    --color-surface: #edeae4;
+    --color-elevated: #e8e4dc;
+    --color-primary: #0f1115;
+    --color-secondary: #4a4845;
+    --color-muted: #9a9692;
+    --color-accent: #5a7a6a;
+    --color-accent-warm: #a68650;
+    --color-border: #d4d0c8;
+  }
+
+  .dark {
+    --color-base: #0f1115;
+    --color-surface: #16191f;
+    --color-elevated: #1e2229;
+    --color-primary: #f5f3ef;
+    --color-secondary: #a09d97;
+    --color-muted: #5a5854;
+    --color-accent: #7d9a8b;
+    --color-accent-warm: #c4a882;
+    --color-border: #2a2d33;
+  }
+
+  * {
+    cursor: none;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-base);
+    color: var(--color-primary);
+    font-family: var(--font-inter);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Re-enable cursor on touch devices */
+  @media (pointer: coarse) {
+    * {
+      cursor: auto;
+    }
+  }
+
+  /* Time-of-day warmth */
+  body.time-evening {
+    filter: sepia(8%) brightness(0.98);
+  }
+
+  body.time-night {
+    filter: sepia(15%) brightness(0.95);
+  }
+}
+
+@layer utilities {
+  .font-serif {
+    font-family: var(--font-cormorant);
+  }
+
+  .font-sans {
+    font-family: var(--font-inter);
+  }
+
+  .bg-base {
+    background-color: var(--color-base);
+  }
+
+  .bg-surface {
+    background-color: var(--color-surface);
+  }
+
+  .bg-elevated {
+    background-color: var(--color-elevated);
+  }
+
+  .text-primary {
+    color: var(--color-primary);
+  }
+
+  .text-secondary {
+    color: var(--color-secondary);
+  }
+
+  .text-muted {
+    color: var(--color-muted);
+  }
+
+  .text-accent {
+    color: var(--color-accent);
+  }
+
+  .text-accent-warm {
+    color: var(--color-accent-warm);
+  }
+
+  .border-border {
+    border-color: var(--color-border);
+  }
+
+  .accent {
+    color: var(--color-accent);
+  }
+}
+
+/* Smooth transitions */
+html {
+  scroll-behavior: smooth;
+}
