@@ -39,7 +39,7 @@ export function Experience() {
             className="pb-12 border-l-2 border-accent/30 pl-8 relative"
           >
             {/* Timeline dot */}
-            <div className="absolute -left-5 top-2 w-6 h-6 bg-accent rounded-full border-4 border-base" />
+            <div className="absolute -left-5 top-2 w-6 h-6 rounded-full bg-accent border-4 border-base shadow-md shadow-accent/30" />
 
             <div className="md:grid md:grid-cols-3 md:gap-8">
               <div>

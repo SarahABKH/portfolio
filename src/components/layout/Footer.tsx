@@ -4,9 +4,9 @@ import { personal } from '@/data/portfolio';
 
 export function Footer() {
   return (
-    <footer className="bg-surface border-t border-border/20 py-12 px-6 md:px-16 lg:px-24">
+    <footer className="bg-surface/90 border-t border-accent/15 py-14 px-6 md:px-16 lg:px-24 backdrop-blur-sm">
       <div className="max-w-7xl mx-auto flex flex-col items-center justify-center gap-6">
-        <p className="font-sans text-sm text-secondary">Built with intention.</p>
+        <p className="font-sans text-sm text-secondary">Built with care — soft edges, honest copy.</p>
         <div className="flex gap-6">
           <a
             href={personal.github}

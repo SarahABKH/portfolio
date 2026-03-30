@@ -4,27 +4,44 @@
 
 @layer base {
   :root {
-    --color-base: #f5f3ef;
-    --color-surface: #edeae4;
-    --color-elevated: #e8e4dc;
-    --color-primary: #0f1115;
-    --color-secondary: #4a4845;
-    --color-muted: #9a9692;
-    --color-accent: #5a7a6a;
-    --color-accent-warm: #a68650;
-    --color-border: #d4d0c8;
+    --color-base: #fff8fb;
+    --color-surface: #ffeef6;
+    --color-elevated: #ffdceb;
+    --color-primary: #3b1228;
+    --color-secondary: #6b4d5f;
+    --color-muted: #9a7d8c;
+    --color-prose-soft: #a898a8;
+    --color-accent: #d9267d;
+    --color-accent-soft: rgba(217, 38, 125, 0.12);
+    --color-accent-warm: #c45a8a;
+    --color-border: #f3c4dc;
+    --color-glow: rgba(255, 105, 180, 0.35);
+    --mesh-1: #ffd6e8;
+    --mesh-2: #ffe0f3;
+    --mesh-3: #f5e6ff;
+    --hero-grid-line: rgba(217, 38, 125, 0.14);
+    --hero-grid-dot: rgba(217, 38, 125, 0.16);
   }
 
   .dark {
-    --color-base: #0f1115;
-    --color-surface: #16191f;
-    --color-elevated: #1e2229;
-    --color-primary: #f5f3ef;
-    --color-secondary: #a09d97;
-    --color-muted: #5a5854;
-    --color-accent: #7d9a8b;
-    --color-accent-warm: #c4a882;
-    --color-border: #2a2d33;
+    --color-base: #140810;
+    --color-surface: #1f0f18;
+    --color-elevated: #2a1522;
+    --color-primary: #fdeef6;
+    /* Lighter on purple surfaces so body copy stays readable */
+    --color-secondary: #ead4df;
+    --color-muted: #b9a0ad;
+    --color-prose-soft: #e2ccd8;
+    --color-accent: #fb64b6;
+    --color-accent-soft: rgba(251, 100, 182, 0.15);
+    --color-accent-warm: #f9a8d4;
+    --color-border: #4a2a3d;
+    --color-glow: rgba(251, 100, 182, 0.25);
+    --mesh-1: #2d1024;
+    --mesh-2: #1a0f1c;
+    --mesh-3: #1f1028;
+    --hero-grid-line: rgba(251, 100, 182, 0.2);
+    --hero-grid-dot: rgba(251, 100, 182, 0.14);
   }
 
   * {
@@ -40,22 +57,40 @@
     color: var(--color-primary);
     font-family: var(--font-inter);
     -webkit-font-smoothing: antialiased;
+    position: relative;
+    min-height: 100vh;
   }
 
-  /* Re-enable cursor on touch devices */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    background:
+      radial-gradient(ellipse 120% 80% at 100% -20%, var(--mesh-1), transparent 50%),
+      radial-gradient(ellipse 90% 70% at -10% 30%, var(--mesh-2), transparent 45%),
+      radial-gradient(ellipse 60% 50% at 80% 100%, var(--mesh-3), transparent 40%);
+    opacity: 0.85;
+  }
+
+  body > * {
+    position: relative;
+    z-index: 1;
+  }
+
   @media (pointer: coarse) {
     * {
       cursor: auto;
     }
   }
 
-  /* Time-of-day warmth */
   body.time-evening {
-    filter: sepia(8%) brightness(0.98);
+    filter: brightness(0.985);
   }
 
   body.time-night {
-    filter: sepia(15%) brightness(0.95);
+    filter: brightness(0.97);
   }
 }
 
@@ -92,6 +127,19 @@
     color: var(--color-muted);
   }
 
+  .text-prose-soft {
+    color: var(--color-prose-soft);
+  }
+
+  /* Descriptions on tinted cards (About, Contact) — full-opacity primary in dark */
+  .text-desc {
+    color: var(--color-secondary);
+  }
+
+  .dark .text-desc {
+    color: #f2e3eb;
+  }
+
   .text-accent {
     color: var(--color-accent);
   }
@@ -107,9 +155,53 @@
   .accent {
     color: var(--color-accent);
   }
+
+  .bg-accent-soft {
+    background-color: var(--color-accent-soft);
+  }
+
+  .ring-glow {
+    box-shadow: 0 0 60px -12px var(--color-glow);
+  }
+
+  /* Hero: layered grids + vignette (see Hero.tsx) */
+  .hero-grid-lines {
+    background-image:
+      linear-gradient(to right, var(--hero-grid-line) 1px, transparent 1px),
+      linear-gradient(to bottom, var(--hero-grid-line) 1px, transparent 1px);
+    background-size: 56px 56px;
+    mask-image: radial-gradient(ellipse 75% 65% at 50% 45%, black 20%, transparent 72%);
+    -webkit-mask-image: radial-gradient(
+      ellipse 75% 65% at 50% 45%,
+      black 20%,
+      transparent 72%
+    );
+  }
+
+  .hero-grid-dots {
+    background-image: radial-gradient(
+      circle at center,
+      var(--hero-grid-dot) 1.25px,
+      transparent 1.25px
+    );
+    background-size: 20px 20px;
+    mask-image: radial-gradient(ellipse 85% 75% at 50% 50%, black 15%, transparent 70%);
+    -webkit-mask-image: radial-gradient(ellipse 85% 75% at 50% 50%, black 15%, transparent 70%);
+  }
+
+  .hero-grid-glow {
+    background: conic-gradient(
+      from 210deg at 50% 50%,
+      var(--color-accent-soft),
+      transparent 35%,
+      var(--color-accent-soft),
+      transparent 70%
+    );
+    opacity: 0.45;
+    filter: blur(60px);
+  }
 }
 
-/* Smooth transitions */
 html {
   scroll-behavior: smooth;
 }

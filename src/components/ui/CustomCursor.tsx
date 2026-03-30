@@ -39,12 +39,10 @@ export function CustomCursor() {
       />
       {/* Ring */}
       <motion.div
-        className="fixed top-0 left-0 rounded-full border pointer-events-none z-[9998]"
+        className="fixed top-0 left-0 rounded-full border border-accent/45 bg-accent/5 pointer-events-none z-[9998]"
         style={{
           x: springX,
           y: springY,
-          borderColor: 'rgba(125, 154, 139, 0.5)',
-          backgroundColor: 'rgba(125, 154, 139, 0.04)',
         }}
         animate={{
           width: cursorType === 'pointer' ? 48 : cursorType === 'text' ? 2 : 32,

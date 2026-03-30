@@ -5,6 +5,7 @@ import { About } from '@/components/sections/About';
 import { Projects } from '@/components/sections/Projects';
 import { Skills } from '@/components/sections/Skills';
 import { Experience } from '@/components/sections/Experience';
+import { Blogs } from '@/components/sections/Blogs';
 import { HowIThink } from '@/components/sections/HowIThink';
 import { Contact } from '@/components/sections/Contact';
 import { CustomCursor } from '@/components/ui/CustomCursor';
@@ -25,6 +26,7 @@ export default function Home() {
         <Projects />
         <Skills />
         <Experience />
+        <Blogs />
         <HowIThink />
         <Contact />
       </main>

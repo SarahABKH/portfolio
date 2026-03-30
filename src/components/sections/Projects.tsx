@@ -19,8 +19,8 @@ function ProjectCard({
       layout
       data-cursor="pointer"
       onClick={() => setExpanded(!expanded)}
-      className={`group border border-border/50 bg-surface rounded-sm p-6 md:p-8 cursor-pointer
-        hover:border-accent/30 transition-colors duration-500 ${large ? 'col-span-full' : ''}`}
+      className={`group border border-border/60 bg-surface/90 backdrop-blur-sm rounded-2xl p-6 md:p-8 cursor-pointer
+        hover:border-accent/35 transition-all duration-500 hover:shadow-lg hover:shadow-accent/5 ${large ? 'col-span-full' : ''}`}
     >
       <div className="flex items-start justify-between mb-4">
         <div>

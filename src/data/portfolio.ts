@@ -1,3 +1,6 @@
+import type { StaticImageData } from 'next/image';
+import blogPipelinePreview from '@/assets/Gemini_Generated_Image_4hezjz4hezjz4hez.png';
+
 export const personal = {
   name: "Sarah Abdul Khader",
   title: "Software Engineer",
@@ -44,11 +47,39 @@ export const experience = [
     location: "Bengaluru, India",
     type: "Full-time",
     points: [
-      { label: "Performance", detail: "Reduced First Contentful Paint by 50% through targeted lazy loading, code splitting, and render optimizations." },
-      { label: "Scale", detail: "Led migration of 40+ UI components to a unified design system, improving consistency and developer velocity." },
-      { label: "Innovation", detail: "Built AI-powered developer tooling that was adopted across engineering teams — cut boilerplate time significantly." },
-      { label: "Ownership", detail: "Worked on production features used by enterprise retail clients across Southeast Asia." },
+      { label: "Performance", detail: "Improved perceived speed with lazy loading, code splitting, and careful render work — fewer wasted frames, snappier flows." },
+      { label: "Systems", detail: "Contributed to a shared UI foundation so product teams ship with clearer patterns and less one-off UI drift." },
+      { label: "Innovation", detail: "Helped introduce AI-assisted workflows that reduced repetitive engineering toil and made reviews more about intent than boilerplate." },
+      { label: "Ownership", detail: "Shipped features used by enterprise retail clients across Southeast Asia — from edge cases to polish." },
     ],
+  },
+];
+
+export type BlogPost = {
+  id: string;
+  title: string;
+  publication: string;
+  href: string;
+  excerpt: string;
+  readTime: string;
+  credit: string;
+  date: string;
+  /** Optional hero thumbnail for the card */
+  previewImage?: StaticImageData;
+};
+
+export const blogs: BlogPost[] = [
+  {
+    id: "dont-just-prompt-pipeline",
+    title: "Don't Just Prompt, Pipeline: Turning AI into an Engineering Execution Engine",
+    publication: "Capillary Technologies",
+    href: "https://medium.com/capillary-tech/dont-just-prompt-pipeline-turning-ai-into-an-engineering-execution-engine-f548718c3a42",
+    excerpt:
+      "Co-authored on how we treated AI as an intelligence layer — mapping complexity, planning with data, and running repeatable migration pipelines with quality gates — instead of ad-hoc prompting alone.",
+    readTime: "7 min read",
+    credit: "With Yogesh Gaonkar & Keshav Agarwal",
+    date: "Mar 2026",
+    previewImage: blogPipelinePreview,
   },
 ];
 
@@ -87,7 +118,7 @@ export const projects = [
     tagline: "Breaking language barriers, one tap at a time.",
     problem: "Most translation apps either do too much or feel clunky. Building one meant thinking hard about the 3-second use case.",
     approach: "Native Android app with Google Translate + Dictionary API integration, speech I/O, Firebase-backed history, and a UI focused on speed.",
-    result: "A clean, fast translator supporting 10+ language pairs with voice input, text-to-speech, and saved history. 3 GitHub stars, which is 3 more than expected.",
+    result: "A clean, fast translator supporting 10+ language pairs with voice input, text-to-speech, and saved history.",
     tech: ["Java", "Android Studio", "Google Translate API", "Firebase"],
     github: "https://github.com/SarahABKH/Language-Translator",
     demo: null,

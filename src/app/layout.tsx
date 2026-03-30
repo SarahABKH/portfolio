@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Cormorant_Garamond, Inter } from 'next/font/google';
+import { Cormorant_Garamond, Plus_Jakarta_Sans } from 'next/font/google';
 import { ThemeProvider } from 'next-themes';
 import './globals.css';
 import { TimeOfDayProvider } from '@/components/providers/TimeOfDayProvider';
@@ -11,9 +11,9 @@ const cormorant = Cormorant_Garamond({
   display: 'swap',
 });
 
-const inter = Inter({
+const sans = Plus_Jakarta_Sans({
   subsets: ['latin'],
-  weight: ['300', '400', '500'],
+  weight: ['300', '400', '500', '600'],
   variable: '--font-inter',
   display: 'swap',
 });
@@ -40,10 +40,10 @@ export default function RootLayout({
     <html
       lang="en"
       suppressHydrationWarning
-      className={`${cormorant.variable} ${inter.variable}`}
+      className={`${cormorant.variable} ${sans.variable}`}
     >
       <body>
-        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
+        <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
           <TimeOfDayProvider>
             {children}
           </TimeOfDayProvider>

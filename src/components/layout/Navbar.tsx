@@ -7,6 +7,7 @@ import { Menu, X } from 'lucide-react';
 const navItems = [
   { label: 'About', href: '#about' },
   { label: 'Work', href: '#work' },
+  { label: 'Writing', href: '#blog' },
   { label: 'Thinking', href: '#thinking' },
   { label: 'Contact', href: '#contact' },
 ];
@@ -54,7 +55,9 @@ export function Navbar() {
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 px-6 md:px-16 lg:px-24 py-6 transition-all duration-500 ${
-        isScrolled ? 'bg-base/80 backdrop-blur-sm border-b border-border/20' : 'bg-transparent'
+        isScrolled
+          ? 'bg-base/85 backdrop-blur-md border-b border-accent/10 shadow-sm shadow-accent/5'
+          : 'bg-transparent'
       }`}
     >
       <div className="flex items-center justify-between max-w-7xl mx-auto">

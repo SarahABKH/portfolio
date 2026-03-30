@@ -51,13 +51,13 @@ export function About() {
             initial="hidden"
             animate={inView ? 'visible' : 'hidden'}
             variants={cardVariants}
-            className="pl-4 border-l border-accent/30 py-2"
+            className="rounded-2xl border border-border bg-surface p-6 md:p-7 shadow-[0_1px_0_rgba(0,0,0,0.04)] ring-1 ring-primary/5 dark:border-border dark:bg-elevated dark:shadow-none dark:ring-white/10"
           >
-            <p className="font-sans text-xs text-accent uppercase tracking-widest mb-2">
+            <p className="font-sans text-xs font-semibold text-primary uppercase tracking-widest mb-3">
               {s.label}
             </p>
             <p
-              className="font-sans text-secondary leading-relaxed text-sm md:text-base"
+              className="font-sans text-desc leading-relaxed text-sm md:text-base"
               data-cursor="text"
             >
               {s.text}
@@ -71,17 +71,20 @@ export function About() {
         initial={{ opacity: 0 }}
         animate={inView ? { opacity: 1 } : {}}
         transition={{ delay: 0.6 }}
-        className="grid grid-cols-2 md:grid-cols-4 gap-px bg-border/50"
+        className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4"
       >
         {[
-          { value: 'SDE-1', label: 'Current level' },
-          { value: '2yrs', label: 'In production' },
-          { value: '40+', label: 'Components migrated' },
-          { value: '1', label: 'App built for myself' },
+          { value: 'Bengaluru', label: 'Home base' },
+          { value: 'Frontend', label: 'Where I spend my time' },
+          { value: 'dear.di', label: 'Side project' },
+          { value: 'Capillary', label: 'Building' },
         ].map((fact) => (
-          <div key={fact.label} className="bg-base p-6 text-center">
+          <div
+            key={fact.label}
+            className="rounded-xl border border-border bg-surface p-6 text-center shadow-[0_1px_0_rgba(0,0,0,0.03)] dark:bg-elevated dark:ring-1 dark:ring-white/5"
+          >
             <p className="font-serif text-3xl text-primary font-light">{fact.value}</p>
-            <p className="font-sans text-xs text-muted mt-1 uppercase tracking-wider">
+            <p className="font-sans text-xs text-muted mt-2 uppercase tracking-wider dark:text-[#d4b8c4]">
               {fact.label}
             </p>
           </div>
